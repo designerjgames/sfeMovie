@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="C:\Programming\sfeMovie-master\src\AudioStream.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Programming\sfeMovie-master\src\Demuxer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Programming\sfeMovie-master\src\Log.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Programming\sfeMovie-master\src\Macros.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Programming\sfeMovie-master\src\Movie.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Programming\sfeMovie-master\src\MovieImpl.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Programming\sfeMovie-master\src\Stream.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Programming\sfeMovie-master\src\StreamSelection.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Programming\sfeMovie-master\src\SubtitleStream.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Programming\sfeMovie-master\src\Timer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Programming\sfeMovie-master\src\TimerPriorities.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Programming\sfeMovie-master\src\Utilities.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Programming\sfeMovie-master\src\VideoStream.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="C:\Programming\sfeMovie-master\src\AudioStream.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Programming\sfeMovie-master\src\DebugTools\LayoutDebugger.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Programming\sfeMovie-master\src\Demuxer.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Programming\sfeMovie-master\src\Log.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Programming\sfeMovie-master\src\Macros.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Programming\sfeMovie-master\src\MovieImpl.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Programming\sfeMovie-master\src\Stream.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Programming\sfeMovie-master\src\SubtitleStream.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Programming\sfeMovie-master\src\Timer.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Programming\sfeMovie-master\src\TimerPriorities.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Programming\sfeMovie-master\src\Utilities.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Programming\sfeMovie-master\src\VideoStream.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Programming\sfeMovie-master\include\sfeMovie\Movie.hpp">
+      <Filter>Public headers</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Programming\sfeMovie-master\include\sfeMovie\StreamSelection.hpp">
+      <Filter>Public headers</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Programming\sfeMovie-master\include\sfeMovie\Visibility.hpp">
+      <Filter>Public headers</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Programming\sfeMovie-master\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{BDC49A80-F8F6-3839-B975-748D1A52850E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Public headers">
+      <UniqueIdentifier>{A7132E8A-3B38-38F9-A765-48644D436B87}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{929C66AC-79C0-3A17-B94C-328935D694AD}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
