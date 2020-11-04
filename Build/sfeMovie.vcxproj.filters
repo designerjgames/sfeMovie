@@ -1,95 +1,92 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="C:\Programming\sfeMovie-master\src\AudioStream.cpp">
+    <ClCompile Include="C:\Programming\Build2\sfeMovie\src\AudioStream.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Programming\sfeMovie-master\src\Demuxer.cpp">
+    <ClCompile Include="C:\Programming\Build2\sfeMovie\src\Demuxer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Programming\sfeMovie-master\src\Log.cpp">
+    <ClCompile Include="C:\Programming\Build2\sfeMovie\src\Log.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Programming\sfeMovie-master\src\Macros.cpp">
+    <ClCompile Include="C:\Programming\Build2\sfeMovie\src\Macros.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Programming\sfeMovie-master\src\Movie.cpp">
+    <ClCompile Include="C:\Programming\Build2\sfeMovie\src\Movie.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Programming\sfeMovie-master\src\MovieImpl.cpp">
+    <ClCompile Include="C:\Programming\Build2\sfeMovie\src\MovieImpl.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Programming\sfeMovie-master\src\Stream.cpp">
+    <ClCompile Include="C:\Programming\Build2\sfeMovie\src\Stream.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Programming\sfeMovie-master\src\StreamSelection.cpp">
+    <ClCompile Include="C:\Programming\Build2\sfeMovie\src\StreamSelection.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Programming\sfeMovie-master\src\SubtitleStream.cpp">
+    <ClCompile Include="C:\Programming\Build2\sfeMovie\src\SubtitleStream.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Programming\sfeMovie-master\src\Timer.cpp">
+    <ClCompile Include="C:\Programming\Build2\sfeMovie\src\Timer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Programming\sfeMovie-master\src\TimerPriorities.cpp">
+    <ClCompile Include="C:\Programming\Build2\sfeMovie\src\TimerPriorities.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Programming\sfeMovie-master\src\Utilities.cpp">
+    <ClCompile Include="C:\Programming\Build2\sfeMovie\src\Utilities.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Programming\sfeMovie-master\src\VideoStream.cpp">
+    <ClCompile Include="C:\Programming\Build2\sfeMovie\src\VideoStream.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="C:\Programming\sfeMovie-master\src\AudioStream.hpp">
+    <ClInclude Include="C:\Programming\Build2\sfeMovie\src\AudioStream.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="C:\Programming\sfeMovie-master\src\DebugTools\LayoutDebugger.hpp">
+    <ClInclude Include="C:\Programming\Build2\sfeMovie\src\DebugTools\LayoutDebugger.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="C:\Programming\sfeMovie-master\src\Demuxer.hpp">
+    <ClInclude Include="C:\Programming\Build2\sfeMovie\src\Demuxer.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="C:\Programming\sfeMovie-master\src\Log.hpp">
+    <ClInclude Include="C:\Programming\Build2\sfeMovie\src\Log.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="C:\Programming\sfeMovie-master\src\Macros.hpp">
+    <ClInclude Include="C:\Programming\Build2\sfeMovie\src\Macros.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="C:\Programming\sfeMovie-master\src\MovieImpl.hpp">
+    <ClInclude Include="C:\Programming\Build2\sfeMovie\src\MovieImpl.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="C:\Programming\sfeMovie-master\src\Stream.hpp">
+    <ClInclude Include="C:\Programming\Build2\sfeMovie\src\Stream.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="C:\Programming\sfeMovie-master\src\SubtitleStream.hpp">
+    <ClInclude Include="C:\Programming\Build2\sfeMovie\src\SubtitleStream.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="C:\Programming\sfeMovie-master\src\Timer.hpp">
+    <ClInclude Include="C:\Programming\Build2\sfeMovie\src\Timer.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="C:\Programming\sfeMovie-master\src\TimerPriorities.hpp">
+    <ClInclude Include="C:\Programming\Build2\sfeMovie\src\TimerPriorities.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="C:\Programming\sfeMovie-master\src\Utilities.hpp">
+    <ClInclude Include="C:\Programming\Build2\sfeMovie\src\Utilities.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="C:\Programming\sfeMovie-master\src\VideoStream.hpp">
+    <ClInclude Include="C:\Programming\Build2\sfeMovie\src\VideoStream.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="C:\Programming\sfeMovie-master\include\sfeMovie\Movie.hpp">
+    <ClInclude Include="C:\Programming\Build2\sfeMovie\include\sfeMovie\Movie.hpp">
       <Filter>Public headers</Filter>
     </ClInclude>
-    <ClInclude Include="C:\Programming\sfeMovie-master\include\sfeMovie\StreamSelection.hpp">
+    <ClInclude Include="C:\Programming\Build2\sfeMovie\include\sfeMovie\StreamSelection.hpp">
       <Filter>Public headers</Filter>
     </ClInclude>
-    <ClInclude Include="C:\Programming\sfeMovie-master\include\sfeMovie\Visibility.hpp">
+    <ClInclude Include="C:\Programming\Build2\sfeMovie\include\sfeMovie\Visibility.hpp">
       <Filter>Public headers</Filter>
     </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <CustomBuild Include="C:\Programming\sfeMovie-master\CMakeLists.txt" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Header Files">

@@ -47,7 +47,7 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{F94C5B2D-E248-361C-BE25-E4346A8A996E}</ProjectGuid>
-    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.18362.0</WindowsTargetPlatformVersion>
     <Keyword>Win32Proj</Keyword>
     <Platform>Win32</Platform>
     <ProjectName>sfeMovie</ProjectName>
@@ -113,15 +113,15 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup>
     <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Programming\Build2\sfeMovie\Build\bin\</OutDir>
-    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(Configuration)\</IntDir>
-    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">sfeMovie-s-d</TargetName>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)$(Platform)\$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(Platform)\$(Configuration)\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">sfeMovie-s</TargetName>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">sfeMovie-s-d</TargetName>
     <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.lib</TargetExt>
     <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.lib</TargetExt>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\Programming\sfeMovie-bin\bin\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)$(Platform)\$(Configuration)\</OutDir>
     <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug NX|Win32'">C:\Programming\sfeMovie-bin\bin\</OutDir>
-    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">sfeMovie.dir\Release\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(Platform)\$(Configuration)\</IntDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug NX|Win32'">sfeMovie.dir\Release\</IntDir>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">sfeMovie-s</TargetName>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug NX|Win32'">sfeMovie-s</TargetName>
@@ -159,15 +159,17 @@
       <RuntimeTypeInfo>true</RuntimeTypeInfo>
       <UseFullPaths>false</UseFullPaths>
       <WarningLevel>Level3</WarningLevel>
-      <PreprocessorDefinitions>WIN32;_WINDOWS;SFML_STATIC;_ITERATOR_DEBUG_LEVEL=1;_ALLOW_ITERATOR_DEBUG_LEVEL_MISMATCH;__STDC_CONSTANT_MACROS;__STDC_LIMIT_MACROS;SFE_EXPORTS;CMAKE_INTDIR="Debug";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;SFML_STATIC;_ITERATOR_DEBUG_LEVEL=1;_ALLOW_ITERATOR_DEBUG_LEVEL_MISMATCH;__STDC_CONSTANT_MACROS;__STDC_LIMIT_MACROS;SFE_EXPORTS;SFEMOVIE_STATIC;CMAKE_INTDIR="Debug";%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ProgramDataBaseFileName>$(OutDir)sfeMovie-s.pdb</ProgramDataBaseFileName>
+      <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;SFML_STATIC;__STDC_CONSTANT_MACROS;__STDC_LIMIT_MACROS;SFE_EXPORTS;CMAKE_INTDIR=\"Debug\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\Programming\Build2\build\SFML\include;C:\Programming\sfeMovie-master\include;C:\Programming\sfeMovie-master\src;C:\Programming\sfeMovie-master\FFmpeg\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Programming\Build2\build\SFML\include;C:\Programming\Build2\sfeMovie\include;C:\Programming\Build2\sfeMovie\src;C:\Programming\Build2\sfeMovie\FFmpeg\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>C:\Programming\Build2\build\SFML\include;C:\Programming\sfeMovie-master\include;C:\Programming\sfeMovie-master\src;C:\Programming\sfeMovie-master\FFmpeg\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Programming\Build2\build\SFML\include;C:\Programming\Build2\sfeMovie\include;C:\Programming\Build2\sfeMovie\src;C:\Programming\Build2\sfeMovie\FFmpeg\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -177,24 +179,8 @@
     <PreLinkEvent>
       <Message>
       </Message>
-      <Command>setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -E copy_directory C:/Programming/sfeMovie-bin/FFmpeg-binaries/lib C:/Programming/sfeMovie-bin/bin
-if %errorlevel% neq 0 goto :cmEnd
-:cmEnd
-endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
-:cmErrorLevel
-exit /b %1
-:cmDone
-if %errorlevel% neq 0 goto :VCEnd
-setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -E copy_directory C:/Programming/sfeMovie-bin/FFmpeg-binaries/bin C:/Programming/sfeMovie-bin/bin
-if %errorlevel% neq 0 goto :cmEnd
-:cmEnd
-endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
-:cmErrorLevel
-exit /b %1
-:cmDone
-if %errorlevel% neq 0 goto :VCEnd</Command>
+      <Command>
+      </Command>
     </PreLinkEvent>
     <Lib>
       <AdditionalOptions>%(AdditionalOptions) /machine:X86</AdditionalOptions>
@@ -220,10 +206,10 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;SFML_STATIC;__STDC_CONSTANT_MACROS;__STDC_LIMIT_MACROS;SFE_EXPORTS;CMAKE_INTDIR=\"Debug\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\Programming\Build2\build\SFML\include;C:\Programming\sfeMovie-master\include;C:\Programming\sfeMovie-master\src;C:\Programming\sfeMovie-master\FFmpeg\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Programming\Build2\build\SFML\include;C:\Programming\Build2\sfeMovie\include;C:\Programming\Build2\sfeMovie\src;C:\Programming\Build2\sfeMovie\FFmpeg\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>C:\Programming\Build2\build\SFML\include;C:\Programming\sfeMovie-master\include;C:\Programming\sfeMovie-master\src;C:\Programming\sfeMovie-master\FFmpeg\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Programming\Build2\build\SFML\include;C:\Programming\Build2\sfeMovie\include;C:\Programming\Build2\sfeMovie\src;C:\Programming\Build2\sfeMovie\FFmpeg\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -258,7 +244,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
-      <AdditionalIncludeDirectories>C:\Programming\Build2\build\SFML\include;C:\Programming\sfeMovie-master\include;C:\Programming\sfeMovie-master\src;C:\Programming\sfeMovie-master\FFmpeg\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Programming\Build2\SFML\include;C:\Programming\Build2\sfeMovie\include;C:\Programming\Build2\sfeMovie\src;C:\Programming\Build2\sfeMovie\FFmpeg\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <CompileAs>Default</CompileAs>
       <ExceptionHandling>Async</ExceptionHandling>
@@ -269,10 +255,9 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
       <RuntimeTypeInfo>true</RuntimeTypeInfo>
       <UseFullPaths>false</UseFullPaths>
       <WarningLevel>Level3</WarningLevel>
-      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;SFML_STATIC;__STDC_CONSTANT_MACROS;__STDC_LIMIT_MACROS;SFE_EXPORTS;CMAKE_INTDIR="Release";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;SFML_STATIC;__STDC_CONSTANT_MACROS;__STDC_LIMIT_MACROS;SFE_EXPORTS;SFEMOVIE_STATIC;CMAKE_INTDIR="Release";%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ObjectFileName>$(IntDir)</ObjectFileName>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
-      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <EnableFiberSafeOptimizations>true</EnableFiberSafeOptimizations>
       <CompileAsManaged>false</CompileAsManaged>
@@ -287,13 +272,16 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
       <FloatingPointExceptions>false</FloatingPointExceptions>
       <CreateHotpatchableImage>false</CreateHotpatchableImage>
       <LanguageStandard>stdcpp17</LanguageStandard>
+      <WholeProgramOptimization>true</WholeProgramOptimization>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <ProgramDataBaseFileName>$(OutDir)sfeMovie-s.pdb</ProgramDataBaseFileName>
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;SFML_STATIC;__STDC_CONSTANT_MACROS;__STDC_LIMIT_MACROS;SFE_EXPORTS;CMAKE_INTDIR=\"Release\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\Programming\Build2\build\SFML\include;C:\Programming\sfeMovie-master\include;C:\Programming\sfeMovie-master\src;C:\Programming\sfeMovie-master\FFmpeg\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Programming\Build2\build\SFML\include;C:\Programming\Build2\sfeMovie\include;C:\Programming\Build2\sfeMovie\src;C:\Programming\Build2\sfeMovie\FFmpeg\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>C:\Programming\Build2\build\SFML\include;C:\Programming\sfeMovie-master\include;C:\Programming\sfeMovie-master\src;C:\Programming\sfeMovie-master\FFmpeg\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Programming\Build2\build\SFML\include;C:\Programming\Build2\sfeMovie\include;C:\Programming\Build2\sfeMovie\src;C:\Programming\Build2\sfeMovie\FFmpeg\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -303,24 +291,8 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <PreLinkEvent>
       <Message>
       </Message>
-      <Command>setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -E copy_directory C:/Programming/sfeMovie-bin/FFmpeg-binaries/lib C:/Programming/sfeMovie-bin/bin
-if %errorlevel% neq 0 goto :cmEnd
-:cmEnd
-endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
-:cmErrorLevel
-exit /b %1
-:cmDone
-if %errorlevel% neq 0 goto :VCEnd
-setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -E copy_directory C:/Programming/sfeMovie-bin/FFmpeg-binaries/bin C:/Programming/sfeMovie-bin/bin
-if %errorlevel% neq 0 goto :cmEnd
-:cmEnd
-endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
-:cmErrorLevel
-exit /b %1
-:cmDone
-if %errorlevel% neq 0 goto :VCEnd</Command>
+      <Command>
+      </Command>
     </PreLinkEvent>
     <Lib>
       <AdditionalOptions>%(AdditionalOptions) /machine:X86</AdditionalOptions>
@@ -328,7 +300,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug NX|Win32'">
     <ClCompile>
-      <AdditionalIncludeDirectories>C:\Programming\Build2\build\SFML\include;C:\Programming\sfeMovie-master\include;C:\Programming\sfeMovie-master\src;C:\Programming\sfeMovie-master\FFmpeg\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Programming\Build2\build\SFML\include;C:\Programming\Build2\sfeMovie\include;C:\Programming\Build2\sfeMovie\src;C:\Programming\Build2\sfeMovie\FFmpeg\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <CompileAs>Default</CompileAs>
       <ExceptionHandling>Async</ExceptionHandling>
@@ -360,10 +332,10 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;SFML_STATIC;__STDC_CONSTANT_MACROS;__STDC_LIMIT_MACROS;SFE_EXPORTS;CMAKE_INTDIR=\"Release\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\Programming\Build2\build\SFML\include;C:\Programming\sfeMovie-master\include;C:\Programming\sfeMovie-master\src;C:\Programming\sfeMovie-master\FFmpeg\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Programming\Build2\build\SFML\include;C:\Programming\Build2\sfeMovie\include;C:\Programming\Build2\sfeMovie\src;C:\Programming\Build2\sfeMovie\FFmpeg\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>C:\Programming\Build2\build\SFML\include;C:\Programming\sfeMovie-master\include;C:\Programming\sfeMovie-master\src;C:\Programming\sfeMovie-master\FFmpeg\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Programming\Build2\build\SFML\include;C:\Programming\Build2\sfeMovie\include;C:\Programming\Build2\sfeMovie\src;C:\Programming\Build2\sfeMovie\FFmpeg\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -398,7 +370,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>C:\Programming\Build2\build\SFML\include;C:\Programming\sfeMovie-master\include;C:\Programming\sfeMovie-master\src;C:\Programming\sfeMovie-master\FFmpeg\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Programming\Build2\build\SFML\include;C:\Programming\Build2\sfeMovie\include;C:\Programming\Build2\sfeMovie\src;C:\Programming\Build2\sfeMovie\FFmpeg\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <CompileAs>Default</CompileAs>
       <ExceptionHandling>Async</ExceptionHandling>
@@ -430,10 +402,10 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;SFML_STATIC;__STDC_CONSTANT_MACROS;__STDC_LIMIT_MACROS;SFE_EXPORTS;CMAKE_INTDIR=\"Release\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\Programming\Build2\build\SFML\include;C:\Programming\sfeMovie-master\include;C:\Programming\sfeMovie-master\src;C:\Programming\sfeMovie-master\FFmpeg\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Programming\Build2\build\SFML\include;C:\Programming\Build2\sfeMovie\include;C:\Programming\Build2\sfeMovie\src;C:\Programming\Build2\sfeMovie\FFmpeg\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>C:\Programming\Build2\build\SFML\include;C:\Programming\sfeMovie-master\include;C:\Programming\sfeMovie-master\src;C:\Programming\sfeMovie-master\FFmpeg\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Programming\Build2\build\SFML\include;C:\Programming\Build2\sfeMovie\include;C:\Programming\Build2\sfeMovie\src;C:\Programming\Build2\sfeMovie\FFmpeg\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -468,7 +440,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug NX|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>C:\Programming\Build2\build\SFML\include;C:\Programming\sfeMovie-master\include;C:\Programming\sfeMovie-master\src;C:\Programming\sfeMovie-master\FFmpeg\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Programming\Build2\build\SFML\include;C:\Programming\Build2\sfeMovie\include;C:\Programming\Build2\sfeMovie\src;C:\Programming\Build2\sfeMovie\FFmpeg\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <CompileAs>Default</CompileAs>
       <ExceptionHandling>Async</ExceptionHandling>
@@ -500,10 +472,10 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;SFML_STATIC;__STDC_CONSTANT_MACROS;__STDC_LIMIT_MACROS;SFE_EXPORTS;CMAKE_INTDIR=\"Release\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\Programming\Build2\build\SFML\include;C:\Programming\sfeMovie-master\include;C:\Programming\sfeMovie-master\src;C:\Programming\sfeMovie-master\FFmpeg\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Programming\Build2\build\SFML\include;C:\Programming\Build2\sfeMovie\include;C:\Programming\Build2\sfeMovie\src;C:\Programming\Build2\sfeMovie\FFmpeg\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>C:\Programming\Build2\build\SFML\include;C:\Programming\sfeMovie-master\include;C:\Programming\sfeMovie-master\src;C:\Programming\sfeMovie-master\FFmpeg\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Programming\Build2\build\SFML\include;C:\Programming\Build2\sfeMovie\include;C:\Programming\Build2\sfeMovie\src;C:\Programming\Build2\sfeMovie\FFmpeg\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -538,7 +510,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">
     <ClCompile>
-      <AdditionalIncludeDirectories>C:\Programming\Build2\build\SFML\include;C:\Programming\sfeMovie-master\include;C:\Programming\sfeMovie-master\src;C:\Programming\sfeMovie-master\FFmpeg\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Programming\Build2\build\SFML\include;C:\Programming\Build2\sfeMovie\include;C:\Programming\Build2\sfeMovie\src;C:\Programming\Build2\sfeMovie\FFmpeg\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <CompileAs>CompileAsCpp</CompileAs>
       <ExceptionHandling>Sync</ExceptionHandling>
@@ -556,10 +528,10 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;SFML_STATIC;__STDC_CONSTANT_MACROS;__STDC_LIMIT_MACROS;SFE_EXPORTS;CMAKE_INTDIR=\"MinSizeRel\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\Programming\Build2\build\SFML\include;C:\Programming\sfeMovie-master\include;C:\Programming\sfeMovie-master\src;C:\Programming\sfeMovie-master\FFmpeg\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Programming\Build2\build\SFML\include;C:\Programming\Build2\sfeMovie\include;C:\Programming\Build2\sfeMovie\src;C:\Programming\Build2\sfeMovie\FFmpeg\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>C:\Programming\Build2\build\SFML\include;C:\Programming\sfeMovie-master\include;C:\Programming\sfeMovie-master\src;C:\Programming\sfeMovie-master\FFmpeg\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Programming\Build2\build\SFML\include;C:\Programming\Build2\sfeMovie\include;C:\Programming\Build2\sfeMovie\src;C:\Programming\Build2\sfeMovie\FFmpeg\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -594,7 +566,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>C:\Programming\Build2\build\SFML\include;C:\Programming\sfeMovie-master\include;C:\Programming\sfeMovie-master\src;C:\Programming\sfeMovie-master\FFmpeg\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Programming\Build2\build\SFML\include;C:\Programming\Build2\sfeMovie\include;C:\Programming\Build2\sfeMovie\src;C:\Programming\Build2\sfeMovie\FFmpeg\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <CompileAs>CompileAsCpp</CompileAs>
       <ExceptionHandling>Sync</ExceptionHandling>
@@ -612,10 +584,10 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;SFML_STATIC;__STDC_CONSTANT_MACROS;__STDC_LIMIT_MACROS;SFE_EXPORTS;CMAKE_INTDIR=\"MinSizeRel\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\Programming\Build2\build\SFML\include;C:\Programming\sfeMovie-master\include;C:\Programming\sfeMovie-master\src;C:\Programming\sfeMovie-master\FFmpeg\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Programming\Build2\build\SFML\include;C:\Programming\Build2\sfeMovie\include;C:\Programming\Build2\sfeMovie\src;C:\Programming\Build2\sfeMovie\FFmpeg\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>C:\Programming\Build2\build\SFML\include;C:\Programming\sfeMovie-master\include;C:\Programming\sfeMovie-master\src;C:\Programming\sfeMovie-master\FFmpeg\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Programming\Build2\build\SFML\include;C:\Programming\Build2\sfeMovie\include;C:\Programming\Build2\sfeMovie\src;C:\Programming\Build2\sfeMovie\FFmpeg\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -650,7 +622,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">
     <ClCompile>
-      <AdditionalIncludeDirectories>C:\Programming\Build2\build\SFML\include;C:\Programming\sfeMovie-master\include;C:\Programming\sfeMovie-master\src;C:\Programming\sfeMovie-master\FFmpeg\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Programming\Build2\build\SFML\include;C:\Programming\Build2\sfeMovie\include;C:\Programming\Build2\sfeMovie\src;C:\Programming\Build2\sfeMovie\FFmpeg\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <CompileAs>CompileAsCpp</CompileAs>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
@@ -667,10 +639,10 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;SFML_STATIC;__STDC_CONSTANT_MACROS;__STDC_LIMIT_MACROS;SFE_EXPORTS;CMAKE_INTDIR=\"RelWithDebInfo\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\Programming\Build2\build\SFML\include;C:\Programming\sfeMovie-master\include;C:\Programming\sfeMovie-master\src;C:\Programming\sfeMovie-master\FFmpeg\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Programming\Build2\build\SFML\include;C:\Programming\Build2\sfeMovie\include;C:\Programming\Build2\sfeMovie\src;C:\Programming\Build2\sfeMovie\FFmpeg\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>C:\Programming\Build2\build\SFML\include;C:\Programming\sfeMovie-master\include;C:\Programming\sfeMovie-master\src;C:\Programming\sfeMovie-master\FFmpeg\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Programming\Build2\build\SFML\include;C:\Programming\Build2\sfeMovie\include;C:\Programming\Build2\sfeMovie\src;C:\Programming\Build2\sfeMovie\FFmpeg\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -705,7 +677,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>C:\Programming\Build2\build\SFML\include;C:\Programming\sfeMovie-master\include;C:\Programming\sfeMovie-master\src;C:\Programming\sfeMovie-master\FFmpeg\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Programming\Build2\build\SFML\include;C:\Programming\Build2\sfeMovie\include;C:\Programming\Build2\sfeMovie\src;C:\Programming\Build2\sfeMovie\FFmpeg\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <CompileAs>CompileAsCpp</CompileAs>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
@@ -722,10 +694,10 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;SFML_STATIC;__STDC_CONSTANT_MACROS;__STDC_LIMIT_MACROS;SFE_EXPORTS;CMAKE_INTDIR=\"RelWithDebInfo\";%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\Programming\Build2\build\SFML\include;C:\Programming\sfeMovie-master\include;C:\Programming\sfeMovie-master\src;C:\Programming\sfeMovie-master\FFmpeg\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Programming\Build2\build\SFML\include;C:\Programming\Build2\sfeMovie\include;C:\Programming\Build2\sfeMovie\src;C:\Programming\Build2\sfeMovie\FFmpeg\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>C:\Programming\Build2\build\SFML\include;C:\Programming\sfeMovie-master\include;C:\Programming\sfeMovie-master\src;C:\Programming\sfeMovie-master\FFmpeg\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Programming\Build2\build\SFML\include;C:\Programming\Build2\sfeMovie\include;C:\Programming\Build2\sfeMovie\src;C:\Programming\Build2\sfeMovie\FFmpeg\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -759,182 +731,34 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     </Lib>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <CustomBuild Include="C:\Programming\sfeMovie-master\CMakeLists.txt">
-      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Building Custom Rule C:/Programming/sfeMovie-master/CMakeLists.txt</Message>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule C:/Programming/sfeMovie-master/CMakeLists.txt</Message>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -SC:/Programming/sfeMovie-master -BC:/Programming/sfeMovie-bin --check-stamp-file C:/Programming/sfeMovie-bin/CMakeFiles/generate.stamp
-if %errorlevel% neq 0 goto :cmEnd
-:cmEnd
-endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
-:cmErrorLevel
-exit /b %1
-:cmDone
-if %errorlevel% neq 0 goto :VCEnd</Command>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -SC:/Programming/sfeMovie-master -BC:/Programming/sfeMovie-bin --check-stamp-file C:/Programming/sfeMovie-bin/CMakeFiles/generate.stamp
-if %errorlevel% neq 0 goto :cmEnd
-:cmEnd
-endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
-:cmErrorLevel
-exit /b %1
-:cmDone
-if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Program Files\CMake\share\cmake-3.17\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CMakeParseArguments.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CPack.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CPackComponent.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\Compiler\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\Platform\WindowsPaths.cmake;C:\Program Files\CMake\share\cmake-3.17\Templates\CPackConfig.cmake.in;C:\Programming\sfeMovie-bin\CMakeFiles\3.17.2\CMakeCCompiler.cmake;C:\Programming\sfeMovie-bin\CMakeFiles\3.17.2\CMakeCXXCompiler.cmake;C:\Programming\sfeMovie-bin\CMakeFiles\3.17.2\CMakeRCCompiler.cmake;C:\Programming\sfeMovie-bin\CMakeFiles\3.17.2\CMakeSystem.cmake;C:\Programming\sfeMovie-master\FFmpeg\FFmpeg.cmake;C:\Programming\sfeMovie-master\Shell.cmake;C:\Programming\sfeMovie-master\cmake\Install.cmake;C:\Programming\sfeMovie-master\cmake\Modules\FindSFML.cmake;C:\Programming\sfeMovie-master\cmake\Packaging.cmake;C:\Programming\sfeMovie-master\cmake\Properties.cmake;%(AdditionalInputs)</AdditionalInputs>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Program Files\CMake\share\cmake-3.17\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CMakeParseArguments.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CPack.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CPackComponent.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\Compiler\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\Platform\WindowsPaths.cmake;C:\Program Files\CMake\share\cmake-3.17\Templates\CPackConfig.cmake.in;C:\Programming\sfeMovie-bin\CMakeFiles\3.17.2\CMakeCCompiler.cmake;C:\Programming\sfeMovie-bin\CMakeFiles\3.17.2\CMakeCXXCompiler.cmake;C:\Programming\sfeMovie-bin\CMakeFiles\3.17.2\CMakeRCCompiler.cmake;C:\Programming\sfeMovie-bin\CMakeFiles\3.17.2\CMakeSystem.cmake;C:\Programming\sfeMovie-master\FFmpeg\FFmpeg.cmake;C:\Programming\sfeMovie-master\Shell.cmake;C:\Programming\sfeMovie-master\cmake\Install.cmake;C:\Programming\sfeMovie-master\cmake\Modules\FindSFML.cmake;C:\Programming\sfeMovie-master\cmake\Packaging.cmake;C:\Programming\sfeMovie-master\cmake\Properties.cmake;%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Programming\sfeMovie-bin\CMakeFiles\generate.stamp</Outputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Programming\sfeMovie-bin\CMakeFiles\generate.stamp</Outputs>
-      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
-      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Building Custom Rule C:/Programming/sfeMovie-master/CMakeLists.txt</Message>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Debug NX|Win32'">Building Custom Rule C:/Programming/sfeMovie-master/CMakeLists.txt</Message>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule C:/Programming/sfeMovie-master/CMakeLists.txt</Message>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Debug NX|x64'">Building Custom Rule C:/Programming/sfeMovie-master/CMakeLists.txt</Message>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -SC:/Programming/sfeMovie-master -BC:/Programming/sfeMovie-bin --check-stamp-file C:/Programming/sfeMovie-bin/CMakeFiles/generate.stamp
-if %errorlevel% neq 0 goto :cmEnd
-:cmEnd
-endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
-:cmErrorLevel
-exit /b %1
-:cmDone
-if %errorlevel% neq 0 goto :VCEnd</Command>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Debug NX|Win32'">setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -SC:/Programming/sfeMovie-master -BC:/Programming/sfeMovie-bin --check-stamp-file C:/Programming/sfeMovie-bin/CMakeFiles/generate.stamp
-if %errorlevel% neq 0 goto :cmEnd
-:cmEnd
-endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
-:cmErrorLevel
-exit /b %1
-:cmDone
-if %errorlevel% neq 0 goto :VCEnd</Command>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -SC:/Programming/sfeMovie-master -BC:/Programming/sfeMovie-bin --check-stamp-file C:/Programming/sfeMovie-bin/CMakeFiles/generate.stamp
-if %errorlevel% neq 0 goto :cmEnd
-:cmEnd
-endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
-:cmErrorLevel
-exit /b %1
-:cmDone
-if %errorlevel% neq 0 goto :VCEnd</Command>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Debug NX|x64'">setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -SC:/Programming/sfeMovie-master -BC:/Programming/sfeMovie-bin --check-stamp-file C:/Programming/sfeMovie-bin/CMakeFiles/generate.stamp
-if %errorlevel% neq 0 goto :cmEnd
-:cmEnd
-endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
-:cmErrorLevel
-exit /b %1
-:cmDone
-if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\Program Files\CMake\share\cmake-3.17\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CMakeParseArguments.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CPack.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CPackComponent.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\Compiler\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\Platform\WindowsPaths.cmake;C:\Program Files\CMake\share\cmake-3.17\Templates\CPackConfig.cmake.in;C:\Programming\sfeMovie-bin\CMakeFiles\3.17.2\CMakeCCompiler.cmake;C:\Programming\sfeMovie-bin\CMakeFiles\3.17.2\CMakeCXXCompiler.cmake;C:\Programming\sfeMovie-bin\CMakeFiles\3.17.2\CMakeRCCompiler.cmake;C:\Programming\sfeMovie-bin\CMakeFiles\3.17.2\CMakeSystem.cmake;C:\Programming\sfeMovie-master\FFmpeg\FFmpeg.cmake;C:\Programming\sfeMovie-master\Shell.cmake;C:\Programming\sfeMovie-master\cmake\Install.cmake;C:\Programming\sfeMovie-master\cmake\Modules\FindSFML.cmake;C:\Programming\sfeMovie-master\cmake\Packaging.cmake;C:\Programming\sfeMovie-master\cmake\Properties.cmake;%(AdditionalInputs)</AdditionalInputs>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug NX|Win32'">C:\Program Files\CMake\share\cmake-3.17\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CMakeParseArguments.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CPack.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CPackComponent.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\Compiler\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\Platform\WindowsPaths.cmake;C:\Program Files\CMake\share\cmake-3.17\Templates\CPackConfig.cmake.in;C:\Programming\sfeMovie-bin\CMakeFiles\3.17.2\CMakeCCompiler.cmake;C:\Programming\sfeMovie-bin\CMakeFiles\3.17.2\CMakeCXXCompiler.cmake;C:\Programming\sfeMovie-bin\CMakeFiles\3.17.2\CMakeRCCompiler.cmake;C:\Programming\sfeMovie-bin\CMakeFiles\3.17.2\CMakeSystem.cmake;C:\Programming\sfeMovie-master\FFmpeg\FFmpeg.cmake;C:\Programming\sfeMovie-master\Shell.cmake;C:\Programming\sfeMovie-master\cmake\Install.cmake;C:\Programming\sfeMovie-master\cmake\Modules\FindSFML.cmake;C:\Programming\sfeMovie-master\cmake\Packaging.cmake;C:\Programming\sfeMovie-master\cmake\Properties.cmake;%(AdditionalInputs)</AdditionalInputs>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Program Files\CMake\share\cmake-3.17\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CMakeParseArguments.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CPack.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CPackComponent.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\Compiler\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\Platform\WindowsPaths.cmake;C:\Program Files\CMake\share\cmake-3.17\Templates\CPackConfig.cmake.in;C:\Programming\sfeMovie-bin\CMakeFiles\3.17.2\CMakeCCompiler.cmake;C:\Programming\sfeMovie-bin\CMakeFiles\3.17.2\CMakeCXXCompiler.cmake;C:\Programming\sfeMovie-bin\CMakeFiles\3.17.2\CMakeRCCompiler.cmake;C:\Programming\sfeMovie-bin\CMakeFiles\3.17.2\CMakeSystem.cmake;C:\Programming\sfeMovie-master\FFmpeg\FFmpeg.cmake;C:\Programming\sfeMovie-master\Shell.cmake;C:\Programming\sfeMovie-master\cmake\Install.cmake;C:\Programming\sfeMovie-master\cmake\Modules\FindSFML.cmake;C:\Programming\sfeMovie-master\cmake\Packaging.cmake;C:\Programming\sfeMovie-master\cmake\Properties.cmake;%(AdditionalInputs)</AdditionalInputs>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug NX|x64'">C:\Program Files\CMake\share\cmake-3.17\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CMakeParseArguments.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CPack.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CPackComponent.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\Compiler\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\Platform\WindowsPaths.cmake;C:\Program Files\CMake\share\cmake-3.17\Templates\CPackConfig.cmake.in;C:\Programming\sfeMovie-bin\CMakeFiles\3.17.2\CMakeCCompiler.cmake;C:\Programming\sfeMovie-bin\CMakeFiles\3.17.2\CMakeCXXCompiler.cmake;C:\Programming\sfeMovie-bin\CMakeFiles\3.17.2\CMakeRCCompiler.cmake;C:\Programming\sfeMovie-bin\CMakeFiles\3.17.2\CMakeSystem.cmake;C:\Programming\sfeMovie-master\FFmpeg\FFmpeg.cmake;C:\Programming\sfeMovie-master\Shell.cmake;C:\Programming\sfeMovie-master\cmake\Install.cmake;C:\Programming\sfeMovie-master\cmake\Modules\FindSFML.cmake;C:\Programming\sfeMovie-master\cmake\Packaging.cmake;C:\Programming\sfeMovie-master\cmake\Properties.cmake;%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\Programming\sfeMovie-bin\CMakeFiles\generate.stamp</Outputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug NX|Win32'">C:\Programming\sfeMovie-bin\CMakeFiles\generate.stamp</Outputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Programming\sfeMovie-bin\CMakeFiles\generate.stamp</Outputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug NX|x64'">C:\Programming\sfeMovie-bin\CMakeFiles\generate.stamp</Outputs>
-      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkObjects>
-      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug NX|Win32'">false</LinkObjects>
-      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
-      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug NX|x64'">false</LinkObjects>
-      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">Building Custom Rule C:/Programming/sfeMovie-master/CMakeLists.txt</Message>
-      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule C:/Programming/sfeMovie-master/CMakeLists.txt</Message>
-      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -SC:/Programming/sfeMovie-master -BC:/Programming/sfeMovie-bin --check-stamp-file C:/Programming/sfeMovie-bin/CMakeFiles/generate.stamp
-if %errorlevel% neq 0 goto :cmEnd
-:cmEnd
-endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
-:cmErrorLevel
-exit /b %1
-:cmDone
-if %errorlevel% neq 0 goto :VCEnd</Command>
-      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -SC:/Programming/sfeMovie-master -BC:/Programming/sfeMovie-bin --check-stamp-file C:/Programming/sfeMovie-bin/CMakeFiles/generate.stamp
-if %errorlevel% neq 0 goto :cmEnd
-:cmEnd
-endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
-:cmErrorLevel
-exit /b %1
-:cmDone
-if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">C:\Program Files\CMake\share\cmake-3.17\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CMakeParseArguments.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CPack.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CPackComponent.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\Compiler\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\Platform\WindowsPaths.cmake;C:\Program Files\CMake\share\cmake-3.17\Templates\CPackConfig.cmake.in;C:\Programming\sfeMovie-bin\CMakeFiles\3.17.2\CMakeCCompiler.cmake;C:\Programming\sfeMovie-bin\CMakeFiles\3.17.2\CMakeCXXCompiler.cmake;C:\Programming\sfeMovie-bin\CMakeFiles\3.17.2\CMakeRCCompiler.cmake;C:\Programming\sfeMovie-bin\CMakeFiles\3.17.2\CMakeSystem.cmake;C:\Programming\sfeMovie-master\FFmpeg\FFmpeg.cmake;C:\Programming\sfeMovie-master\Shell.cmake;C:\Programming\sfeMovie-master\cmake\Install.cmake;C:\Programming\sfeMovie-master\cmake\Modules\FindSFML.cmake;C:\Programming\sfeMovie-master\cmake\Packaging.cmake;C:\Programming\sfeMovie-master\cmake\Properties.cmake;%(AdditionalInputs)</AdditionalInputs>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Program Files\CMake\share\cmake-3.17\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CMakeParseArguments.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CPack.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CPackComponent.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\Compiler\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\Platform\WindowsPaths.cmake;C:\Program Files\CMake\share\cmake-3.17\Templates\CPackConfig.cmake.in;C:\Programming\sfeMovie-bin\CMakeFiles\3.17.2\CMakeCCompiler.cmake;C:\Programming\sfeMovie-bin\CMakeFiles\3.17.2\CMakeCXXCompiler.cmake;C:\Programming\sfeMovie-bin\CMakeFiles\3.17.2\CMakeRCCompiler.cmake;C:\Programming\sfeMovie-bin\CMakeFiles\3.17.2\CMakeSystem.cmake;C:\Programming\sfeMovie-master\FFmpeg\FFmpeg.cmake;C:\Programming\sfeMovie-master\Shell.cmake;C:\Programming\sfeMovie-master\cmake\Install.cmake;C:\Programming\sfeMovie-master\cmake\Modules\FindSFML.cmake;C:\Programming\sfeMovie-master\cmake\Packaging.cmake;C:\Programming\sfeMovie-master\cmake\Properties.cmake;%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">C:\Programming\sfeMovie-bin\CMakeFiles\generate.stamp</Outputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Programming\sfeMovie-bin\CMakeFiles\generate.stamp</Outputs>
-      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">false</LinkObjects>
-      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
-      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">Building Custom Rule C:/Programming/sfeMovie-master/CMakeLists.txt</Message>
-      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule C:/Programming/sfeMovie-master/CMakeLists.txt</Message>
-      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -SC:/Programming/sfeMovie-master -BC:/Programming/sfeMovie-bin --check-stamp-file C:/Programming/sfeMovie-bin/CMakeFiles/generate.stamp
-if %errorlevel% neq 0 goto :cmEnd
-:cmEnd
-endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
-:cmErrorLevel
-exit /b %1
-:cmDone
-if %errorlevel% neq 0 goto :VCEnd</Command>
-      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -SC:/Programming/sfeMovie-master -BC:/Programming/sfeMovie-bin --check-stamp-file C:/Programming/sfeMovie-bin/CMakeFiles/generate.stamp
-if %errorlevel% neq 0 goto :cmEnd
-:cmEnd
-endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
-:cmErrorLevel
-exit /b %1
-:cmDone
-if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">C:\Program Files\CMake\share\cmake-3.17\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CMakeParseArguments.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CPack.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CPackComponent.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\Compiler\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\Platform\WindowsPaths.cmake;C:\Program Files\CMake\share\cmake-3.17\Templates\CPackConfig.cmake.in;C:\Programming\sfeMovie-bin\CMakeFiles\3.17.2\CMakeCCompiler.cmake;C:\Programming\sfeMovie-bin\CMakeFiles\3.17.2\CMakeCXXCompiler.cmake;C:\Programming\sfeMovie-bin\CMakeFiles\3.17.2\CMakeRCCompiler.cmake;C:\Programming\sfeMovie-bin\CMakeFiles\3.17.2\CMakeSystem.cmake;C:\Programming\sfeMovie-master\FFmpeg\FFmpeg.cmake;C:\Programming\sfeMovie-master\Shell.cmake;C:\Programming\sfeMovie-master\cmake\Install.cmake;C:\Programming\sfeMovie-master\cmake\Modules\FindSFML.cmake;C:\Programming\sfeMovie-master\cmake\Packaging.cmake;C:\Programming\sfeMovie-master\cmake\Properties.cmake;%(AdditionalInputs)</AdditionalInputs>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Program Files\CMake\share\cmake-3.17\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CMakeCXXInformation.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CMakeCommonLanguageInclude.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CMakeInitializeConfigs.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CMakeParseArguments.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CMakeSystemSpecificInitialize.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CPack.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\CPackComponent.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\Compiler\MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\Compiler\MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\Platform\Windows-MSVC-CXX.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\Platform\Windows-MSVC.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.17\Modules\Platform\WindowsPaths.cmake;C:\Program Files\CMake\share\cmake-3.17\Templates\CPackConfig.cmake.in;C:\Programming\sfeMovie-bin\CMakeFiles\3.17.2\CMakeCCompiler.cmake;C:\Programming\sfeMovie-bin\CMakeFiles\3.17.2\CMakeCXXCompiler.cmake;C:\Programming\sfeMovie-bin\CMakeFiles\3.17.2\CMakeRCCompiler.cmake;C:\Programming\sfeMovie-bin\CMakeFiles\3.17.2\CMakeSystem.cmake;C:\Programming\sfeMovie-master\FFmpeg\FFmpeg.cmake;C:\Programming\sfeMovie-master\Shell.cmake;C:\Programming\sfeMovie-master\cmake\Install.cmake;C:\Programming\sfeMovie-master\cmake\Modules\FindSFML.cmake;C:\Programming\sfeMovie-master\cmake\Packaging.cmake;C:\Programming\sfeMovie-master\cmake\Properties.cmake;%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">C:\Programming\sfeMovie-bin\CMakeFiles\generate.stamp</Outputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Programming\sfeMovie-bin\CMakeFiles\generate.stamp</Outputs>
-      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">false</LinkObjects>
-      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
-    </CustomBuild>
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="C:\Programming\sfeMovie-master\src\AudioStream.cpp" />
-    <ClInclude Include="C:\Programming\sfeMovie-master\src\AudioStream.hpp" />
-    <ClInclude Include="C:\Programming\sfeMovie-master\src\DebugTools\LayoutDebugger.hpp" />
-    <ClCompile Include="C:\Programming\sfeMovie-master\src\Demuxer.cpp" />
-    <ClInclude Include="C:\Programming\sfeMovie-master\src\Demuxer.hpp" />
-    <ClCompile Include="C:\Programming\sfeMovie-master\src\Log.cpp" />
-    <ClInclude Include="C:\Programming\sfeMovie-master\src\Log.hpp" />
-    <ClCompile Include="C:\Programming\sfeMovie-master\src\Macros.cpp" />
-    <ClInclude Include="C:\Programming\sfeMovie-master\src\Macros.hpp" />
-    <ClCompile Include="C:\Programming\sfeMovie-master\src\Movie.cpp" />
-    <ClCompile Include="C:\Programming\sfeMovie-master\src\MovieImpl.cpp" />
-    <ClInclude Include="C:\Programming\sfeMovie-master\src\MovieImpl.hpp" />
-    <ClCompile Include="C:\Programming\sfeMovie-master\src\Stream.cpp" />
-    <ClInclude Include="C:\Programming\sfeMovie-master\src\Stream.hpp" />
-    <ClCompile Include="C:\Programming\sfeMovie-master\src\StreamSelection.cpp" />
-    <ClCompile Include="C:\Programming\sfeMovie-master\src\SubtitleStream.cpp" />
-    <ClInclude Include="C:\Programming\sfeMovie-master\src\SubtitleStream.hpp" />
-    <ClCompile Include="C:\Programming\sfeMovie-master\src\Timer.cpp" />
-    <ClInclude Include="C:\Programming\sfeMovie-master\src\Timer.hpp" />
-    <ClCompile Include="C:\Programming\sfeMovie-master\src\TimerPriorities.cpp" />
-    <ClInclude Include="C:\Programming\sfeMovie-master\src\TimerPriorities.hpp" />
-    <ClCompile Include="C:\Programming\sfeMovie-master\src\Utilities.cpp" />
-    <ClInclude Include="C:\Programming\sfeMovie-master\src\Utilities.hpp" />
-    <ClCompile Include="C:\Programming\sfeMovie-master\src\VideoStream.cpp" />
-    <ClInclude Include="C:\Programming\sfeMovie-master\src\VideoStream.hpp" />
-    <ClInclude Include="C:\Programming\sfeMovie-master\include\sfeMovie\Movie.hpp" />
-    <ClInclude Include="C:\Programming\sfeMovie-master\include\sfeMovie\StreamSelection.hpp" />
-    <ClInclude Include="C:\Programming\sfeMovie-master\include\sfeMovie\Visibility.hpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="C:\Programming\sfeMovie-bin\ZERO_CHECK.vcxproj">
-      <Project>{18DA9E05-B6F6-34B7-A6F2-8BD8C28F2FBB}</Project>
-      <Name>ZERO_CHECK</Name>
-      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </ProjectReference>
-    <ProjectReference Include="C:\Programming\sfeMovie-bin\FFmpeg\FFmpeg.vcxproj">
-      <Project>{AD008401-DC02-39CD-8E86-1D30DC9FADC1}</Project>
-      <Name>FFmpeg</Name>
-      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </ProjectReference>
+    <ClCompile Include="C:\Programming\Build2\sfeMovie\src\AudioStream.cpp" />
+    <ClInclude Include="C:\Programming\Build2\sfeMovie\src\AudioStream.hpp" />
+    <ClInclude Include="C:\Programming\Build2\sfeMovie\src\DebugTools\LayoutDebugger.hpp" />
+    <ClCompile Include="C:\Programming\Build2\sfeMovie\src\Demuxer.cpp" />
+    <ClInclude Include="C:\Programming\Build2\sfeMovie\src\Demuxer.hpp" />
+    <ClCompile Include="C:\Programming\Build2\sfeMovie\src\Log.cpp" />
+    <ClInclude Include="C:\Programming\Build2\sfeMovie\src\Log.hpp" />
+    <ClCompile Include="C:\Programming\Build2\sfeMovie\src\Macros.cpp" />
+    <ClInclude Include="C:\Programming\Build2\sfeMovie\src\Macros.hpp" />
+    <ClCompile Include="C:\Programming\Build2\sfeMovie\src\Movie.cpp" />
+    <ClCompile Include="C:\Programming\Build2\sfeMovie\src\MovieImpl.cpp" />
+    <ClInclude Include="C:\Programming\Build2\sfeMovie\src\MovieImpl.hpp" />
+    <ClCompile Include="C:\Programming\Build2\sfeMovie\src\Stream.cpp" />
+    <ClInclude Include="C:\Programming\Build2\sfeMovie\src\Stream.hpp" />
+    <ClCompile Include="C:\Programming\Build2\sfeMovie\src\StreamSelection.cpp" />
+    <ClCompile Include="C:\Programming\Build2\sfeMovie\src\SubtitleStream.cpp" />
+    <ClInclude Include="C:\Programming\Build2\sfeMovie\src\SubtitleStream.hpp" />
+    <ClCompile Include="C:\Programming\Build2\sfeMovie\src\Timer.cpp" />
+    <ClInclude Include="C:\Programming\Build2\sfeMovie\src\Timer.hpp" />
+    <ClCompile Include="C:\Programming\Build2\sfeMovie\src\TimerPriorities.cpp" />
+    <ClInclude Include="C:\Programming\Build2\sfeMovie\src\TimerPriorities.hpp" />
+    <ClCompile Include="C:\Programming\Build2\sfeMovie\src\Utilities.cpp" />
+    <ClInclude Include="C:\Programming\Build2\sfeMovie\src\Utilities.hpp" />
+    <ClCompile Include="C:\Programming\Build2\sfeMovie\src\VideoStream.cpp" />
+    <ClInclude Include="C:\Programming\Build2\sfeMovie\src\VideoStream.hpp" />
+    <ClInclude Include="C:\Programming\Build2\sfeMovie\include\sfeMovie\Movie.hpp" />
+    <ClInclude Include="C:\Programming\Build2\sfeMovie\include\sfeMovie\StreamSelection.hpp" />
+    <ClInclude Include="C:\Programming\Build2\sfeMovie\include\sfeMovie\Visibility.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
